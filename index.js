@@ -8,11 +8,13 @@ dotenv.config({
     path: path.resolve(process.cwd() + '/.env'),
 });
 
-async function getWalletBalance(wallet) {
+async function getWalletBalance(wallet, block = null) {
     try {
-        return await token.getAccountBalanceForTokenContractAddress(wallet, '0xd37c1417da7bf5b02ffdea8d5427022dc88a0ee2', 6574878);
-        //return await token.getHistoricAccountBalanceForTokenContractAddress(wallet, '0xd37c1417da7bf5b02ffdea8d5427022dc88a0ee2', 6574878);
-        
+        if (block) {
+            return await token.getHistoricAccountBalanceForTokenContractAddress(wallet, '0xd37c1417da7bf5b02ffdea8d5427022dc88a0ee2', block);
+        } else {
+            return await token.getAccountBalanceForTokenContractAddress(wallet, '0xd37c1417da7bf5b02ffdea8d5427022dc88a0ee2');
+        }
     } catch (err) {
         console.log(err)
     }
