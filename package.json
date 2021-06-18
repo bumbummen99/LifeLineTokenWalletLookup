@@ -1,0 +1,16 @@
+{
+  "name": "llt-lookup",
+  "version": "1.0.0",
+  "description": "A small script to lookup LLT wallet balances.",
+  "repository": "https://github.com/bumbummen99/LifeLineTokenWalletLookup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrick Henninger <privat@skyraptor.eu>",
+  "license": "MIT",
+  "dependencies": {
+    "@skyraptor/bsc-scan": "^1.1.2",
+    "dotenv": "^10.0.0"
+  }
+}
